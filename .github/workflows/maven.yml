@@ -25,7 +25,7 @@ jobs:
     - name: FatJar-Datei bauen
       run: mkdir staging && cp target/*jar-with-dependencies*.jar Lottozahlen_FatJar.jar
     - name: FatJar-Datei veröffentlichen
-    - uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         name: Package
         path: Lottozahlen_FatJar.jar

@@ -1,5 +1,7 @@
 package de.eldecker.dhbw.lottozahlen;
 
+import static de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator.erzeugeTipp;
+
 /**
  * Klasse mit Einstiegsmethode.
  */
@@ -13,7 +15,16 @@ public class App {
      */
     public static void main (String[] args) {
 
-        System.out.println("\nJetzt sollten Lottozahlen ausgegeben werden ...\n");
+        System.out.println();
+        
+        int[] lottoTippArray = erzeugeTipp();
+        
+        for (int zahl : lottoTippArray) {
+            
+            System.out.println(zahl);
+        }
+        
+        System.out.println();
     }
 
 }

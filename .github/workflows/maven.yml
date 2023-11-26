@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Git-Repo auschecken
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3 # Doku: https://github.com/actions/checkout#checkout-v4
     - name: JDK17 einrichten
       uses: actions/setup-java@v3
       with:
@@ -22,10 +22,8 @@ jobs:
         cache: maven
     - name: FatJar-Datei mit Maven bauen
       run: mvn --batch-mode package
-    - name: FatJar-Datei bauen
-      run: mkdir staging && cp target/*jar-with-dependencies*.jar Lottozahlen_FatJar.jar
     - name: FatJar-Datei veröffentlichen
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3 # Doku: https://github.com/actions/upload-artifact#upload-artifact-v3
       with:
-        name: Package
-        path: Lottozahlen_FatJar.jar
+        name: Lottozahlen_FatJar.jar
+        path: target/*jar-with-dependencies*.jar

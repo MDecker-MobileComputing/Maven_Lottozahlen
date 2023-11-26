@@ -30,8 +30,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - run: mvn --batch-mode --update-snapshots verify
-    - run: mkdir staging && cp target/*jar-with-dependencies*.jar bereitstellungsordner
+    - run: mkdir staging && cp target/*jar-with-dependencies*.jar Lottozahlen_FatJar.jar
     - uses: actions/upload-artifact@v3
       with:
         name: Package
-        path: bereitstellungsordner
+        path: Lottozahlen_FatJar.jar

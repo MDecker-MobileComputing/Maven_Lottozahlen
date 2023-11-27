@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Random;
 
 /**
- * Klasse für das "Auswürfen" eines Lottozahlen-Tipp für "6 aus 49"
+ * Klasse für das "Auswürfeln" eines Lottozahlen-Tipp für "6 aus 49"
  * (deutsches Zahlenlotto).
  */
 public class LottoZahlenGenerator {

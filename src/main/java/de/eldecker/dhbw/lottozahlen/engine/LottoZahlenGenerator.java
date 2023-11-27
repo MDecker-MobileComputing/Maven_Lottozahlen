@@ -51,7 +51,9 @@ public class LottoZahlenGenerator {
 
     /**
      * Methode, um Initialisierungswert des Zufallsgenerator für
-     * Unit-Tests zu setzen. 
+     * Unit-Tests zu setzen. Vor der Ausführung jeden Testfalls
+     * sollte diese Methode mit definierten Seed-Werten aufgerufen
+     * werden, damit die Tests reproduzierbar sind.
      * 
      * @param seed Initialisierungswert für Zufallsgenerator
      */

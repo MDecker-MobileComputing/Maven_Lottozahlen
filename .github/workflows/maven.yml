@@ -18,8 +18,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Unit-Tests ausfuehren
+      run: mvn --batch-mode clean test
     - name: FatJar-Datei mit Maven bauen
-      run: mvn --batch-mode clean package
+      run: mvn --batch-mode package
     - name: FatJar-Datei veröffentlichen
       uses: actions/upload-artifact@v3 # Doku: https://github.com/actions/upload-artifact#upload-artifact-v3
       with:

@@ -83,7 +83,7 @@ public class LottoZahlenGeneratorTest {
                assertTrue( zahl >= 1 );
            }
            
-           assertTrue( zahl > maxZahl ); // Check für Sortierreihenfolge
+           assertTrue( zahl < maxZahl ); // Check für Sortierreihenfolge
            maxZahl = zahl;
        }
        

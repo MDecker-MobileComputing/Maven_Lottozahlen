@@ -6,51 +6,48 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
 
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
+/**
+ * Am Anfang jeder Testmethode wird der Zufallszahlengenerator mit einem definierten
+ * Wert ("Seed") initialisiert, damit die Testläufe reproduzierbar sind.
+ */
 public class LottoZahlenGeneratorTest {
+    
+    @ParameterizedTest
+    @ValueSource(ints = { 10, 42, 123, 1024 })
+    void richtigeAnzahl(int seed) {
+    
+        LottoZahlenGenerator.setSeedFuerZufallsgenerator(seed);
         
-    /**
-     * Reihenfolge der Testausführung ist nicht deterministisch, deshalb
-     * vor jeder Testmethode den Zufallsgenerator neu initialisieren.
-     */
-    @BeforeEach
-    void prepareBeforeEachUnitTest() {
+        int[] ergebnisArray = LottoZahlenGenerator.erzeugeTipp(); // Aufruf Methode unter Test
         
-        LottoZahlenGenerator.setSeedFuerZufallsgenerator(123);
+        assertEquals(TIPP_ANZAHL, ergebnisArray.length); 
     }
     
-    @Test
-    void richtigeAnzahl() {
-    
-        for (int i = 1; i <= 10; i++) {
 
-            int[] ergebnisArray = LottoZahlenGenerator.erzeugeTipp();
-            assertEquals(TIPP_ANZAHL, ergebnisArray.length, 
-                         "Ergebnis-Array hat nicht erwartete Länge in Durchlauf " + i);
-        }
-    }
-    
-    @Test
-    void keineDoppeltenZahl() {
+    @ParameterizedTest
+    @ValueSource(ints = { 10, 42, 123, 1024 })
+    void keineMehrfachenZahlen(int seed) {
 
-        for (int i = 1; i <= 10; i++) {
+        LottoZahlenGenerator.setSeedFuerZufallsgenerator(seed);
+        
 
-            int[] ergebnisArray = LottoZahlenGenerator.erzeugeTipp();
+        int[] ergebnisArray = LottoZahlenGenerator.erzeugeTipp(); // Aufruf Methode unter Test
+        
+        // ein Set (Menge) kann jedes Element höchstens einmal enthalten;
+        // wenn also ein Wert mehrfach enthalten wäre, dann hätte das
+        // Set weniger Elemente als TIPP_ANZAHL        
+        Set<Integer> intSet = new HashSet<>(TIPP_ANZAHL);
+        for (int wert : ergebnisArray) {
             
-            Set<Integer> intSet = new HashSet<>(TIPP_ANZAHL);
-            for (int wert : ergebnisArray) {
-                intSet.add(wert);
-            }
-            
-            assertEquals(TIPP_ANZAHL, intSet.size(),
-                         "Ergebnis-Array hat mehrfache Einträge in Durchlauf " + i);
+            intSet.add(wert);
         }
+        
+        assertEquals(TIPP_ANZAHL, intSet.size());                         
     }
-    
-    
+        
 }

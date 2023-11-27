@@ -2,6 +2,7 @@ package de.eldecker.dhbw.lottozahlen.engine;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Random;
 
 /**
  * Klasse für das "Auswürfen" eines Lottozahlen-Tipp für "6 aus 49"
@@ -15,8 +16,10 @@ public class LottoZahlenGenerator {
     /** Konstante für Anzahl der Zahlen, die für einen Tipp auszuwählen sind. */
     public static final int TIPP_ANZAHL = 6;
     
- 
+    /** Zufallszahlengenerator. */
+    private static Random sRandom = new Random();
     
+     
     /**
      * Zahlentipp für Lotto erzeugen.
      * 
@@ -28,7 +31,7 @@ public class LottoZahlenGenerator {
         LottoZahlRecord[] alleLottozahlenArray = new LottoZahlRecord[MAX_LOTTOZAHL];
         for (int i = 0; i < MAX_LOTTOZAHL; i++) {
             
-            double zufallszahl = Math.random(); // erzeugt Zufallszahl im Bereich [0.0; 1.0)
+            double zufallszahl = sRandom.nextDouble(); // erzeugt Zufallszahl im Bereich [0.0; 1.0)
             alleLottozahlenArray[i] = new LottoZahlRecord(i+1, zufallszahl);
         }
         

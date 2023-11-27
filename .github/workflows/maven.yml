@@ -25,5 +25,5 @@ jobs:
     - name: FatJar-Datei veröffentlichen
       uses: actions/upload-artifact@v3 # Doku: https://github.com/actions/upload-artifact#upload-artifact-v3
       with:
-        name: Lottozahlen_FatJar.jar
+        name: Lottozahlen_FatJar
         path: target/*jar-with-dependencies*.jar

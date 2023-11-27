@@ -40,7 +40,11 @@
   <build>
     <plugins>
         <plugin>
-            <!-- "Fat Jar" bauen, wenn Befehl "mvn package"" ausgeführt wird -->              
+            <!-- 
+                 "Fat Jar" bauen, wenn Befehl "mvn package" ausgeführt wird;
+                  das Programm hat zwar keine Abhängigkeiten, die in das jar "eingebacken"
+                  werden müssen, aber so wird das Main-Class-Attribute gesetzt.
+              -->              
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-assembly-plugin</artifactId>
             <version>3.6.0</version>

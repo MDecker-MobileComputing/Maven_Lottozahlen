@@ -15,7 +15,7 @@ jobs:
     - name: JDK17 einrichten
       uses: actions/setup-java@v3 # Doku: https://github.com/actions/setup-java#setup-java
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
         cache: maven
     - name: FatJar-Datei mit Maven bauen

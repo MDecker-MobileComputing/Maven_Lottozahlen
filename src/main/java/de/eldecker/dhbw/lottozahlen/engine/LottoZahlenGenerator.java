@@ -23,8 +23,7 @@ public class LottoZahlenGenerator {
     /**
      * Zahlentipp für Lotto erzeugen.
      * 
-     * @return Array mit Lotto-Tipp, enthält 6 Zahlen aufsteigend
-     *         sortiert.
+     * @return Array mit Lotto-Tipp, enthält 6 Zahlen aufsteigend sortiert.         
      */
     public static int[] erzeugeTipp() {
         
@@ -35,8 +34,8 @@ public class LottoZahlenGenerator {
             alleLottozahlenArray[i] = new LottoZahlRecord(i+1, zufallszahl);
         }
         
-        Arrays.sort(alleLottozahlenArray, 
-                    Comparator.comparingDouble(LottoZahlRecord::zufallszahl));
+        Comparator<LottoZahlRecord> comparator = Comparator.comparingDouble(LottoZahlRecord::zufallszahl); 
+        Arrays.sort(alleLottozahlenArray, comparator );
         
         int[] ergebnisArray = new int[TIPP_ANZAHL];
         for (int i = 0; i < TIPP_ANZAHL; i++) {
@@ -47,6 +46,18 @@ public class LottoZahlenGenerator {
         Arrays.sort(ergebnisArray);
         
         return ergebnisArray;
+    }
+    
+
+    /**
+     * Methode, um Initialisierungswert des Zufallsgenerator für
+     * Unit-Tests zu setzen. 
+     * 
+     * @param seed Initialisierungswert für Zufallsgenerator
+     */
+    public static void setSeedFuerZufallsgenerator(long seed) {
+        
+        sRandom = new Random(seed);
     }
     
 }

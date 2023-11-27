@@ -8,7 +8,7 @@ on:
 
 jobs:
   baue-fatjar-job:
-    runs-on: windows-latest # alternativer Wert: ubuntu-latest
+    runs-on: macos-latest # alternative Werte: windows-latest, macos-latest
     steps:
     - name: Git-Repo auschecken
       uses: actions/checkout@v4   # Doku: https://github.com/actions/checkout#checkout-v4

@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Git-Repo auschecken
       uses: actions/checkout@v4   # Doku: https://github.com/actions/checkout#checkout-v4
-    - name: JDK17 einrichten
+    - name: JDK 21 einrichten
       uses: actions/setup-java@v3 # Doku: https://github.com/actions/setup-java#setup-java
       with:
         java-version: '21'

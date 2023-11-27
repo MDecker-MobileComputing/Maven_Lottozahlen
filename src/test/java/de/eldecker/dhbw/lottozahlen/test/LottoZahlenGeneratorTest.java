@@ -80,10 +80,10 @@ public class LottoZahlenGeneratorTest {
            
            if (maxZahl == -1) {
                
-               assertTrue( zahl >= 1 );
+               assertTrue( zahl < 1 );
            }
            
-           assertTrue( zahl > maxZahl );
+           assertTrue( zahl > maxZahl ); // Check für Sortierreihenfolge
            maxZahl = zahl;
        }
        

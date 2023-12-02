@@ -38,7 +38,7 @@ public class DeutschesLottoTest {
     }
     
     @Test
-    @Tag("WichtigerTest")
+    @Tag("wichtig")
     void richtigeAnzahl() {
         
         int[] tippArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
@@ -52,7 +52,8 @@ public class DeutschesLottoTest {
      * kann jedes Element höchstens einmal enthalten). 
      */    
     @Test
-    @Tag("WichtigerTest")
+    @Tag("wichtig")
+    @Tag("nochEinTag")
     void keineMehrfachenZahlen() {
         
         int[] tippArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test

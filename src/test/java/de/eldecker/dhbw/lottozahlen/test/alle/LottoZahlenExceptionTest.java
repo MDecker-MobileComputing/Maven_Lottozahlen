@@ -22,7 +22,7 @@ import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
 public class LottoZahlenExceptionTest {
     
     @Test
-    @Tag("WichtigerTest")
+    @Tag("wichtig")
     void maxLottoZahlZuKlein() {
 
         final int maxZahl = 1;
@@ -36,7 +36,7 @@ public class LottoZahlenExceptionTest {
     }
 
     @Test
-    @Tag("WichtigerTest")
+    @Tag("wichtig")
     void anzahlZahlenZuKlein() {
         
         final int anzahlZahlen = 0;

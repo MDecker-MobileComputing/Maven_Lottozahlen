@@ -7,8 +7,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import de.eldecker.dhbw.lottozahlen.engine.LottoException;
 import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
+import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
 
 /**
  * Diese Klasse enthält Testmethode, die überprüfen, ob der Konstruktor der Klasse

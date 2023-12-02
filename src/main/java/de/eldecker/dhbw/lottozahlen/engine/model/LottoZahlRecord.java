@@ -1,4 +1,4 @@
-package de.eldecker.dhbw.lottozahlen.engine;
+package de.eldecker.dhbw.lottozahlen.engine.model;
 
 /**
  * Ein Objekt dieses Records repräsentiert eine der Lottozahlen zusammen mit  

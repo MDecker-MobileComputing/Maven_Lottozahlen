@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.suite.api.SelectMethod;
 import org.junit.platform.suite.api.Suite;
 
-import de.eldecker.dhbw.lottozahlen.engine.LottoException;
 import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
+import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
 import de.eldecker.dhbw.lottozahlen.test.alle.DeutschesLottoTest;
 import de.eldecker.dhbw.lottozahlen.test.alle.ItalLottoTest;
 

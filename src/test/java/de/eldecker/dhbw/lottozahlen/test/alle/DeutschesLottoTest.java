@@ -10,8 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import de.eldecker.dhbw.lottozahlen.engine.LottoException;
 import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
+import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
 
 /**
  * Tests für deutsches Zahlenlotto "6 aus 49".

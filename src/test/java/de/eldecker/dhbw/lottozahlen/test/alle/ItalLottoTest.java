@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import de.eldecker.dhbw.lottozahlen.engine.LottoException;
 import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
+import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
 
 /**
  * Test für italienisches Zahlenlotto "6 aus 90".

@@ -1,4 +1,4 @@
-package de.eldecker.dhbw.lottozahlen.engine;
+package de.eldecker.dhbw.lottozahlen.engine.model;
 
 /**
  * Eigene Exception-Klasse für Lottozahlengenerator.

@@ -5,6 +5,9 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Random;
 
+import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
+import de.eldecker.dhbw.lottozahlen.engine.model.LottoZahlRecord;
+
 /**
  * Klasse für das "Auswürfeln" eines Lottozahlen-Tipp für verschiedene Lottosysteme.
  * <br><br>

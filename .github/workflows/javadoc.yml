@@ -2,7 +2,7 @@ name: JavaDoc erzeugen und veröffentlichen
 
 on:
   push:
-    branches: [ "javadoc-zweig" ]
+    branches: [ "master" ]
 
 jobs:
   baue-javadoc:

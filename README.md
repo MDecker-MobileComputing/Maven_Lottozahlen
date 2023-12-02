@@ -10,6 +10,12 @@ gebaut werden, siehe auch [diesen Tab des Repos](https://github.com/MDecker-Mobi
 
 <br>
 
+JavaDoc-Doku (erzeugt mit [dieser 3rd-Party-Action](https://github.com/marketplace/actions/deploy-publish-javadoc) und 
+bereitgestellt mit [GitHub Pages](https://pages.github.com/)): 
+https://mdecker-mobilecomputing.github.io/Maven_Lottozahlen/
+
+<br>
+
 ----
 
 ## License ##

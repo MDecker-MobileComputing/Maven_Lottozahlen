@@ -70,7 +70,7 @@ public class LottoZahlenGenerator {
     /**
      * Zahlentipp für Lotto erzeugen.
      * 
-     * @return Array mit Lotto-Tipp
+     * @return Array mit Lotto-Tipp (aufsteigend sortiert)
      */
     public int[] erzeugeTipp() {
         

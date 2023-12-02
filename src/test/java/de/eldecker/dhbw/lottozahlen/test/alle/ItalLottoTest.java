@@ -1,6 +1,7 @@
 package de.eldecker.dhbw.lottozahlen.test.alle;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertAll; 
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,6 +39,19 @@ public class ItalLottoTest {
         int[] tippArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
         
         assertEquals(ANZAHL_ZAHLEN, tippArray.length);
+    }
+    
+    /**
+     * Demo für {@code assertAll()}.
+     */
+    @Test
+    void parameterRichtigGespeichert() {
+        
+        assertAll(
+                "Parameter von Lottosystem richtig gespeichert",
+                () -> assertEquals( ANZAHL_ZAHLEN, _cut.getAnzahl()  ),
+                () -> assertEquals( MAX_ZAHL     , _cut.getMaxZahl() )
+              );        
     }
     
 }

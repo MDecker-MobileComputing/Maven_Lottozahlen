@@ -98,4 +98,25 @@ public class LottoZahlenGenerator {
         return ergebnisArray;
     }
     
+    /**
+     * Getter für höchste Lottozahl des Lottosystems, für den das aufrufende Objekt erzeugt wurde.
+     *  
+     * @return Höchste Lottozahl, z.B. "49" für deutsches Lotto "6 aus 49"
+     */
+    public int getMaxZahl() {
+        
+        return _maxLottoZahl;
+    }
+
+    /**
+     * Getter für Anzahl der Zahlen in einem gültigen Tipp für das Lottosystem, für den das 
+     * aufrufende Objekt erzeugt wurde. 
+     *  
+     * @return Höchste Lottozahl, z.B. "6" für deutsches Lotto "6 aus 49"
+     */
+    public int getAnzahl() {
+        
+        return _anzahlLottoZahlen;
+    }
+
 }

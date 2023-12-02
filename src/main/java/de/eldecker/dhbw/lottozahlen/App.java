@@ -1,6 +1,7 @@
 package de.eldecker.dhbw.lottozahlen;
 
-import static de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator.erzeugeTipp;
+import de.eldecker.dhbw.lottozahlen.engine.LottoException;
+import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
 
 /**
  * Klasse mit Einstiegsmethode.
@@ -13,12 +14,13 @@ public class App {
      *
      * @param args Kommandozeilenargumente, werden nicht ausgewertet.
      */
-    public static void main (String[] args) {
+    public static void main (String[] args) throws LottoException {
 
         System.out.println();
         
-        int[] lottoTippArray = erzeugeTipp();
+        LottoZahlenGenerator lottoZahlenGenerator = new LottoZahlenGenerator(6, 49); // throws LottoException 
         
+        int[] lottoTippArray = lottoZahlenGenerator.erzeugeTipp();        
         for (int zahl : lottoTippArray) {
             
             System.out.println(zahl);

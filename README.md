@@ -6,11 +6,12 @@ Das Repo enthält ein Maven-Projekt mit einem einfachen Java-Kommandozeilenprogr
 das einen Zahlentipp für das deutsche Zahlenlotto "6 aus 49" auf die Konsole schreibt.
 
 Das Maven-Projekt soll mit [GitHub Actions](https://github.com/features/actions) in der Cloud 
-gebaut werden, siehe auch [Tab "Actions" des Repos](https://github.com/MDecker-MobileComputing/Maven_Lottozahlen/actions).
+gebaut werden, siehe auch 
+[Tab "Actions" des Repos](https://github.com/MDecker-MobileComputing/Maven_Lottozahlen/actions).
 
 <br>
 
-Siehe [hier](https://mdecker-mobilecomputing.github.io/Maven_Lottozahlen/) für JavaDoc-Doku (erzeugt mit 
+Siehe [hier für JavaDoc-Doku](https://mdecker-mobilecomputing.github.io/Maven_Lottozahlen/) (erzeugt mit 
 [dieser 3rd-Party-Action](https://github.com/marketplace/actions/deploy-publish-javadoc) und bereitgestellt 
 mit [GitHub Pages](https://pages.github.com/)): 
 

@@ -1,8 +1,10 @@
-package de.eldecker.dhbw.lottozahlen.test;
+package de.eldecker.dhbw.lottozahlen.test.alle;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import de.eldecker.dhbw.lottozahlen.engine.LottoException;
@@ -11,10 +13,16 @@ import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
 /**
  * Diese Klasse enthält Testmethode, die überprüfen, ob der Konstruktor der Klasse
  * unter Test bei unsinnigen Parametern eine Exception wirft.
+ * <br><br>
+ * 
+ * Die Testklasse hat eine Annotation für einen {@code DisplayName}. Der damit
+ * spezifizierte Anzeigename wird im Eclipse-View "JUnit" verwendet.
  */
+@DisplayName("Ausnahme-Tests")
 public class LottoZahlenExceptionTest {
     
     @Test
+    @Tag("WichtigerTest")
     void maxLottoZahlZuKlein() {
 
         final int maxZahl = 1;
@@ -28,6 +36,7 @@ public class LottoZahlenExceptionTest {
     }
 
     @Test
+    @Tag("WichtigerTest")
     void anzahlZahlenZuKlein() {
         
         final int anzahlZahlen = 0;
@@ -60,4 +69,21 @@ public class LottoZahlenExceptionTest {
         });         
     }
 
+    @Test
+    void maxZahlNegativ() {
+
+        assertThrows(LottoException.class, () -> {
+            
+            new LottoZahlenGenerator(12, -10); // "12 aus -10"
+        });         
+    }
+    
+    @Test
+    void anzahlZahlenNegative() {
+
+        assertThrows(LottoException.class, () -> {
+            
+            new LottoZahlenGenerator(-6, 49); // "-6 aus 49"
+        });         
+    }    
 }

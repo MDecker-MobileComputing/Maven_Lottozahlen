@@ -1,4 +1,4 @@
-package de.eldecker.dhbw.lottozahlen.test;
+package de.eldecker.dhbw.lottozahlen.test.alle;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import de.eldecker.dhbw.lottozahlen.engine.LottoException;
@@ -24,8 +25,11 @@ public class DeutschesLottoTest {
     private LottoZahlenGenerator _cut;
     
     /**
-     * Vor jeden Unit-Test-Methode wird ein neuer Zufallsgenerator
-     * erzeugt.
+     * Vor jeden Unit-Test-Methode wird ein neues Objekt der CUT
+     * (mit frisch initialisiertem Testdatengenerator) erzeugt.
+     * Da jede Testmethode nur einmal die Methode {@code erzeugeTipp()}
+     * aufruft, gibt diese Methode in jeder Testmethode dieselbe
+     * Zahlenfolge zurück.
      */
     @BeforeEach
     void vorJederTestMethodeVorbereiten() throws LottoException {
@@ -34,6 +38,7 @@ public class DeutschesLottoTest {
     }
     
     @Test
+    @Tag("WichtigerTest")
     void richtigeAnzahl() {
         
         int[] tippArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
@@ -47,16 +52,13 @@ public class DeutschesLottoTest {
      * kann jedes Element höchstens einmal enthalten). 
      */    
     @Test
+    @Tag("WichtigerTest")
     void keineMehrfachenZahlen() {
         
         int[] tippArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
         
-        Set<Integer> intSet = new HashSet<>(ANZAHL_ZAHLEN);
-        for (int wert : tippArray) {
-            
-            intSet.add(wert);
-        }
-        
+        Set<Integer> intSet = arrayToSet(tippArray);
+
         assertEquals(ANZAHL_ZAHLEN, intSet.size());
     }
     
@@ -80,4 +82,19 @@ public class DeutschesLottoTest {
         
         assertTrue( maxZahl <= MAX_ZAHL );
      }    
+    
+    /**
+     * Hilfsmethode (keine Unit-Test-Methode!), wandelt int-Array in {@code Set<Integer>}
+     * um, wobei evtl. mehrfach vorhandene Zahlen verloren gehen.
+     */
+    private Set<Integer> arrayToSet(int[] intArray) {
+        
+        Set<Integer> intSet = new HashSet<>(ANZAHL_ZAHLEN);
+        for (int wert : intArray) {
+            
+            intSet.add(wert);
+        }
+        
+        return intSet;
+    }
 }

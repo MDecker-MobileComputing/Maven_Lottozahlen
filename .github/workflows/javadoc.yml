@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: JavaDoc erzeugen und mit GHPages bereitstellen
-        uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0
+        uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0 # Doku: https://github.com/marketplace/actions/deploy-publish-javadoc
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           javadoc-branch: master

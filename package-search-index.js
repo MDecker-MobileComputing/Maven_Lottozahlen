@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.eldecker.dhbw.lottozahlen"},{"l":"de.eldecker.dhbw.lottozahlen.engine"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.eldecker.dhbw.lottozahlen"},{"l":"de.eldecker.dhbw.lottozahlen.engine"},{"l":"de.eldecker.dhbw.lottozahlen.engine.model"}];updateSearchResults();

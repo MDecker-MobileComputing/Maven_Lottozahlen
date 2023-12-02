@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"de.eldecker.dhbw.lottozahlen","l":"App"},{"p":"de.eldecker.dhbw.lottozahlen.engine","l":"LottoZahlenGenerator"},{"p":"de.eldecker.dhbw.lottozahlen.engine","l":"LottoZahlRecord"}];updateSearchResults();

@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
 import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 

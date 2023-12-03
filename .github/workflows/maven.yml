@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  baue-fatjar-job:
+  job-fatjar:
     runs-on: ubuntu-latest # alternative Werte: windows-latest, macos-latest
     steps:
     - name: Git-Repo auschecken
@@ -26,4 +26,17 @@ jobs:
       uses: actions/upload-artifact@v3 # Doku: https://github.com/actions/upload-artifact#upload-artifact-v3
       with:
         name: Lottozahlen_FatJar
-        path: target/*jar-with-dependencies*.jar
+        path: target/*jar-with-dependencies*.
+  job-javadoc:
+    needs: job-fatjar
+    runs-on: ubuntu-latest
+    steps:
+      - name: JavaDoc erzeugen und mit GHPages bereitstellen
+        uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0 # Doku: https://github.com/marketplace/actions/deploy-publish-javadoc
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          javadoc-branch: javadoc-zweig
+          java-version: 21
+          target-folder: # url will be https://<username>.github.io/<repo>/javadoc, This can be left as nothing to generate javadocs in the root folder.
+          project: maven # or gradle
+

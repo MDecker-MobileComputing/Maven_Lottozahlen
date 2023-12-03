@@ -5,7 +5,9 @@ import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
 
 /**
  * Klasse mit Einstiegsmethode für Erzeugung Zahltipp für
- * "6 aus 49" (Deutschland).
+ * "6 aus 49" (Deutschland). Die dafür verwendete Klasse
+ * {@link LottoZahlenGenerator} kann aber auch für andere
+ * Lottosysteme verwendet werden.
  */
 public class App {
 

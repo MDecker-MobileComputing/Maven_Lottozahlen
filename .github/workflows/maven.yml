@@ -26,3 +26,15 @@ jobs:
         name: Lottozahlen_FatJar
         path: target/*jar-with-dependencies*.jar
 
+  job-javadoc:
+    needs: job-fatjar
+    runs-on: ubuntu-latest
+    steps:
+      - name: JavaDoc erzeugen und mit GHPages bereitstellen
+        uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          javadoc-branch: javadoc-zweig
+          java-version: 21
+          target-folder:
+          project: maven

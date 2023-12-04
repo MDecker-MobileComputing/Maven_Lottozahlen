@@ -1,19 +1,17 @@
-name: Java CI with Maven
+name: FatJar bauen
 
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   job-fatjar:
-    runs-on: ubuntu-latest # alternative Werte: windows-latest, macos-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Git-Repo auschecken
-      uses: actions/checkout@v4   # Doku: https://github.com/actions/checkout#checkout-v4
+      uses: actions/checkout@v4
     - name: JDK 21 einrichten
-      uses: actions/setup-java@v3 # Doku: https://github.com/actions/setup-java#setup-java
+      uses: actions/setup-java@v3
       with:
         java-version: '21'
         distribution: 'temurin'
@@ -23,20 +21,7 @@ jobs:
     - name: FatJar-Datei mit Maven bauen
       run: mvn --batch-mode clean package
     - name: FatJar-Datei veröffentlichen
-      uses: actions/upload-artifact@v3 # Doku: https://github.com/actions/upload-artifact#upload-artifact-v3
+      uses: actions/upload-artifact@v3
       with:
         name: Lottozahlen_FatJar
         path: target/*jar-with-dependencies*.
-  job-javadoc:
-    needs: job-fatjar
-    runs-on: ubuntu-latest
-    steps:
-      - name: JavaDoc erzeugen und mit GHPages bereitstellen
-        uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0 # Doku: https://github.com/marketplace/actions/deploy-publish-javadoc
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          javadoc-branch: javadoc-zweig
-          java-version: 21
-          target-folder: # url will be https://<username>.github.io/<repo>/javadoc, This can be left as nothing to generate javadocs in the root folder.
-          project: maven # or gradle
-

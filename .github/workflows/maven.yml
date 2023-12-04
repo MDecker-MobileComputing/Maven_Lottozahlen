@@ -1,4 +1,4 @@
-name: FatJar bauen.
+name: FatJar bauen
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: FatJar bauen
+name: FatJar bauen.
 
 on:
   push:
@@ -24,4 +24,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Lottozahlen_FatJar
-        path: target/*jar-with-dependencies*.
+        path: target/*jar-with-dependencies*.jar
+

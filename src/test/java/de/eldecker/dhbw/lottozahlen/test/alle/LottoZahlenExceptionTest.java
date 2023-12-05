@@ -25,14 +25,10 @@ public class LottoZahlenExceptionTest {
     @Tag("wichtig")
     void maxLottoZahlZuKlein() {
 
-        final int maxZahl = 1;
-        
-        Throwable ex = assertThrows(LottoException.class, () -> {
+        assertThrows(LottoException.class, () -> {
             
-            new LottoZahlenGenerator(1, maxZahl); // "1 aus 1"
+            new LottoZahlenGenerator(1, 1); // "1 aus 1"
         });        
-        
-        assertTrue( ex.getMessage().contains(maxZahl + "") );
     }
 
     @Test

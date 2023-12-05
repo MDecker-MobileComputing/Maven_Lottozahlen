@@ -27,7 +27,7 @@ jobs:
         path: target/*jar-with-dependencies*.jar
 
   job-javadoc:
-    #needs: job-fatjar
+    needs: job-fatjar
     runs-on: ubuntu-latest
     steps:
       - name: JavaDoc erzeugen und mit GHPages bereitstellen
@@ -38,3 +38,5 @@ jobs:
           java-version: 21
           target-folder:
           project: maven
+
+

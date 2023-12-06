@@ -16,7 +16,7 @@ public class App {
      *
      * @param args Kommandozeilenargumente, werden nicht ausgewertet.
      */
-    public static void main (String[] args) throws LottoException {
+    public static void main (String[] args) throws LottoException 
 
         System.out.println("\nTipp deutsches Zahlenlotto \"6 aus \"49:\n");
 

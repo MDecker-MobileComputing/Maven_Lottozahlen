@@ -32,7 +32,7 @@ public class RichtigeAnzahlTestSuite {
     @Test
     void richtigeAnzahlSchwedischesLotto() throws LottoException {
         
-        LottoZahlenGenerator cut = new LottoZahlenGenerator(7, 35, 424242);
+        LottoZahlenGenerator cut = new LottoZahlenGenerator( 7, 35, 424242 );
         
         assertEquals( 7, cut.erzeugeTipp().length );
     }

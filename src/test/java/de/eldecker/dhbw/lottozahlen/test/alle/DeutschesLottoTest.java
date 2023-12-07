@@ -66,7 +66,6 @@ public class DeutschesLottoTest {
     @Test
     void aufsteigendeReihenfolge() {
 
-        
         int[] ergebnisArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
 
         int maxZahl = -1;

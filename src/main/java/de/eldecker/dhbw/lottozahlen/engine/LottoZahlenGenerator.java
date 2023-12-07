@@ -97,7 +97,8 @@ public class LottoZahlenGenerator {
         
         return ergebnisArray;
     }
-    
+
+
     /**
      * Getter für höchste Lottozahl des Lottosystems, für den das aufrufende Objekt erzeugt wurde.
      *  
@@ -107,6 +108,7 @@ public class LottoZahlenGenerator {
         
         return _maxLottoZahl;
     }
+
 
     /**
      * Getter für Anzahl der Zahlen in einem gültigen Tipp für das Lottosystem, für den das 

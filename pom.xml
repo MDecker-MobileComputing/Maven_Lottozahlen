@@ -33,27 +33,26 @@
       <dependency>
           <groupId>org.junit.jupiter</groupId>
           <artifactId>junit-jupiter</artifactId>
-          <version>5.10.1</version>
+          <version>5.11.3</version>
           <scope>test</scope>
-      </dependency>  
+      </dependency>
 	  <dependency>
 		  <groupId>org.junit.platform</groupId>
 		  <artifactId>junit-platform-suite</artifactId>
 		  <version>1.10.1</version>
-		  <scope>test</scope>	
+		  <scope>test</scope>
 	  </dependency>
   </dependencies>
-  
 
-  
+
   <build>
     <plugins>
         <plugin>
-            <!-- 
+            <!--
                  "Fat Jar" bauen, wenn Befehl "mvn package" ausgeführt wird;
                   das Programm hat zwar keine Abhängigkeiten, die in das jar "eingebacken"
                   werden müssen, aber so wird das Main-Class-Attribute gesetzt.
-              -->              
+              -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-assembly-plugin</artifactId>
             <version>3.6.0</version>
@@ -77,7 +76,7 @@
                 </execution>
             </executions>
         </plugin>
-        
+
         <!-- Wird benötigt, damit Unit-Tests auch unter GitHub ausgeführt werden. -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -90,8 +89,8 @@
                     <version>${junit.version}</version>
                 </dependency>
             </dependencies>
-        </plugin>        
+        </plugin>
     </plugins>
-  </build>  
+  </build>
 
 </project>

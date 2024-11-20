@@ -42,20 +42,20 @@ public class LottoZahlenGenerator {
      *
      * @throws LottoException    Ungültige Werte für {@code anzahlLottoZahlen} oder {@code maxLottoZahl}
      */
-    public LottoZahlenGenerator(int anzahlLottoZahlen, int maxLottoZahl, long initWertFuerZufall) throws LottoException {
+    public LottoZahlenGenerator( int anzahlLottoZahlen, int maxLottoZahl, long initWertFuerZufall ) throws LottoException {
 
         if (anzahlLottoZahlen < 1) {
 
-            throw new LottoException("anzahlLottoZahlen=" + anzahlLottoZahlen + " ist zu klein");
+            throw new LottoException( "anzahlLottoZahlen=" + anzahlLottoZahlen + " ist zu klein" );
         }
         if (maxLottoZahl < 6) {
 
-            throw new LottoException("maxLottoZahl=" + maxLottoZahl + " ist zu klein");
+            throw new LottoException( "maxLottoZahl=" + maxLottoZahl + " ist zu klein" );
         }
 
         if (maxLottoZahl <= anzahlLottoZahlen) {
 
-           throw new LottoException("MaxLottoZahl=" + maxLottoZahl + " <= anzahlLottoZahlen=" + anzahlLottoZahlen);
+           throw new LottoException( "MaxLottoZahl=" + maxLottoZahl + " <= anzahlLottoZahlen=" + anzahlLottoZahlen );
         }
 
         _anzahlLottoZahlen = anzahlLottoZahlen;
@@ -67,10 +67,21 @@ public class LottoZahlenGenerator {
 
     /**
      * Convience-Konstruktor, siehe Beschreibung von {@link #LottoZahlenGenerator(int, int, long)}.
+     * 
+     * @param anzahlLottoZahlen  Anzahl der Zahlen im Tipp, z.B. "6" bei deutschem Zahlenlotto "6 aus 49";
+     *                           muss mindestens 1 sein
+     *
+     * @param maxLottoZahl  Höchste Lottozahl, z.B. "49" bei deutschem Zahlenlotto "6 aus 49";
+     *                      muss mindestens 6 sein
+     *                      
+     * @throws LottoException  Ungültige Werte für {@code anzahlLottoZahlen} oder {@code maxLottoZahl}                      
      */
-    public LottoZahlenGenerator(int anzahlLottoZahlen, int maxLottoZahl) throws LottoException {
+    public LottoZahlenGenerator( int anzahlLottoZahlen, int maxLottoZahl ) throws LottoException {
 
-        this(anzahlLottoZahlen, maxLottoZahl, new Date().getTime());
+        this( anzahlLottoZahlen, 
+        	  maxLottoZahl, 
+        	  new Date().getTime() 
+        	);
     }
 
 
@@ -81,17 +92,17 @@ public class LottoZahlenGenerator {
      */
     public int[] erzeugeTipp() {
 
-        LottoZahlRecord[] alleLottozahlenArray = new LottoZahlRecord[_maxLottoZahl];
-        for (int i = 0; i < alleLottozahlenArray.length; i++) {
+        LottoZahlRecord[] alleLottozahlenArray = new LottoZahlRecord[ _maxLottoZahl ];
+        for ( int i = 0; i < alleLottozahlenArray.length; i++ ) {
 
             double zufallszahl = _zufallsgenerator.nextDouble(); // erzeugt Zufallszahl im Bereich [0.0; 1.0)
-            alleLottozahlenArray[i] = new LottoZahlRecord(i+1, zufallszahl);
+            alleLottozahlenArray[i] = new LottoZahlRecord( i+1, zufallszahl );
         }
 
-        Comparator<LottoZahlRecord> comparator = Comparator.comparingDouble(LottoZahlRecord::zufallszahl);
-        Arrays.sort(alleLottozahlenArray, comparator );
+        Comparator<LottoZahlRecord> comparator = Comparator.comparingDouble( LottoZahlRecord::zufallszahl );
+        Arrays.sort( alleLottozahlenArray, comparator );
 
-        int[] ergebnisArray = new int[_anzahlLottoZahlen];
+        int[] ergebnisArray = new int[ _anzahlLottoZahlen ];
         for (int i = 0; i < _anzahlLottoZahlen; i++) {
 
             ergebnisArray[i] = alleLottozahlenArray[i].lottozahl();

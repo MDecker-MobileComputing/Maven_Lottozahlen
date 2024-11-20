@@ -10,6 +10,13 @@ import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
  * verwendet werden.
  */
 public class App {
+	
+	/**
+	 * Dummy-Konstruktor, um Instanziierung dieser Klasse zu verhindern
+	 * (wäre nicht sinnvoll, weil die Klasse nur eine statische Methode hat).
+	 */
+	private App() {}		
+	
 
     /**
      * Einstiegsmethode: schreibt einen Zahlentipp für deutsches Lotto
@@ -19,16 +26,16 @@ public class App {
      *
      * @throws LottoException falls die Erzeugung des Zahlentipps fehlschlägt
      */
-    public static void main (String[] args) throws LottoException {
+    public static void main ( String[] args ) throws LottoException {
 
-        System.out.println("\nTipp deutsches Zahlenlotto \"6 aus \"49:\n");
+        System.out.println( "\nTipp deutsches Zahlenlotto \"6 aus \"49:\n" );
 
-        LottoZahlenGenerator lottoZahlenGenerator = new LottoZahlenGenerator(6, 49); // throws LottoException
+        LottoZahlenGenerator lottoZahlenGenerator = new LottoZahlenGenerator( 6, 49 ); // throws LottoException
 
         int[] lottoTippArray = lottoZahlenGenerator.erzeugeTipp();
-        for (int zahl : lottoTippArray) {
+        for ( int zahl : lottoTippArray ) {
 
-            System.out.println("  " + zahl);
+            System.out.println( "  " + zahl );
         }
 
         System.out.println();

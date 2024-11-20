@@ -1,5 +1,6 @@
 package de.eldecker.dhbw.lottozahlen.engine.model;
 
+
 /**
  * Eigene Exception-Klasse für Lottozahlengenerator.
  * Die Exception soll z.B. geworfen werden, wenn die Höchstzahl kleiner als die
@@ -13,8 +14,8 @@ public class LottoException extends Exception {
      * 
      * @param nachricht Beschreibung des Fehlers 
      */
-    public LottoException(String nachricht) {
+    public LottoException( String nachricht ) {
         
-        super(nachricht);
+        super( nachricht );
     }
 }

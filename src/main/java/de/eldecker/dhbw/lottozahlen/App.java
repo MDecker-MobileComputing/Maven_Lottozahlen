@@ -3,10 +3,11 @@ package de.eldecker.dhbw.lottozahlen;
 import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
 import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
 
+
 /**
- * Klasse mit Einstiegsmethode für Erzeugung eines Zahltipps für Lotto "6 aus 49" (Deutschland). 
- * Die dafür verwendete Klasse {@link LottoZahlenGenerator} kann aber auch für andere Lottosysteme 
- * verwendet werden. 
+ * Klasse mit Einstiegsmethode für Erzeugung eines Zahltipps für Lotto "6 aus 49" (Deutschland).
+ * Die dafür verwendete Klasse {@link LottoZahlenGenerator} kann aber auch für andere Lottosysteme
+ * verwendet werden.
  */
 public class App {
 
@@ -15,6 +16,8 @@ public class App {
      * "6 aus 49" auf die Konsole (aufsteigend sortiert).
      *
      * @param args Kommandozeilenargumente, werden nicht ausgewertet.
+     *
+     * @throws LottoException falls die Erzeugung des Zahlentipps fehlschlägt
      */
     public static void main (String[] args) throws LottoException {
 

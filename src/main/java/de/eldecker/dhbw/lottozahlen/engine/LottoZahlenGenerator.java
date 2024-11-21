@@ -44,16 +44,16 @@ public class LottoZahlenGenerator {
      */
     public LottoZahlenGenerator( int anzahlLottoZahlen, int maxLottoZahl, long initWertFuerZufall ) throws LottoException {
 
-        if (anzahlLottoZahlen < 1) {
+        if ( anzahlLottoZahlen < 1 ) {
 
             throw new LottoException( "anzahlLottoZahlen=" + anzahlLottoZahlen + " ist zu klein" );
         }
-        if (maxLottoZahl < 6) {
+        if ( maxLottoZahl < 6 ) {
 
             throw new LottoException( "maxLottoZahl=" + maxLottoZahl + " ist zu klein" );
         }
 
-        if (maxLottoZahl <= anzahlLottoZahlen) {
+        if ( maxLottoZahl <= anzahlLottoZahlen ) {
 
            throw new LottoException( "MaxLottoZahl=" + maxLottoZahl + " <= anzahlLottoZahlen=" + anzahlLottoZahlen );
         }

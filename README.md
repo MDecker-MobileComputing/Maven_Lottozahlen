@@ -9,7 +9,7 @@ kann aber auch Zahlentipps für andere Lottosysteme erzeugen.
 
 <br>
 
-Siehe [hier für API-Doc (JavaDoc)](https://mdecker-mobilecomputing.github.io/Maven_Lottozahlen/),
+Siehe [**hier für API-Doc (JavaDoc)**](https://mdecker-mobilecomputing.github.io/Maven_Lottozahlen/),
 bereitgestellt mit [GitHub Pages](https://pages.github.com/).
 
 <br>

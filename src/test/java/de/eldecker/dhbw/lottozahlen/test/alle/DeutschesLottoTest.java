@@ -34,7 +34,7 @@ public class DeutschesLottoTest {
     @BeforeEach
     void vorJederTestMethodeVorbereiten() throws LottoException {
          
-        _cut = new LottoZahlenGenerator(ANZAHL_ZAHLEN, MAX_ZAHL, 1234);
+        _cut = new LottoZahlenGenerator( ANZAHL_ZAHLEN, MAX_ZAHL, 1234 );
     }
     
     @Test
@@ -43,7 +43,7 @@ public class DeutschesLottoTest {
         
         int[] tippArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
         
-        assertEquals(ANZAHL_ZAHLEN, tippArray.length);
+        assertEquals( ANZAHL_ZAHLEN, tippArray.length );
     }
     
     /**
@@ -58,9 +58,9 @@ public class DeutschesLottoTest {
         
         int[] tippArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
         
-        Set<Integer> intSet = arrayToSet(tippArray);
+        Set<Integer> intSet = arrayToSet( tippArray );
 
-        assertEquals(ANZAHL_ZAHLEN, intSet.size());
+        assertEquals( ANZAHL_ZAHLEN, intSet.size() );
     }
     
     @Test
@@ -69,9 +69,9 @@ public class DeutschesLottoTest {
         int[] ergebnisArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
 
         int maxZahl = -1;
-        for (int zahl : ergebnisArray) {
+        for ( int zahl : ergebnisArray ) {
             
-            if (maxZahl == -1) {
+            if ( maxZahl == -1 ) {
                 
                 assertTrue( zahl >= 1 );
             }
@@ -89,8 +89,8 @@ public class DeutschesLottoTest {
      */
     private Set<Integer> arrayToSet(int[] intArray) {
         
-        Set<Integer> intSet = new HashSet<>(ANZAHL_ZAHLEN);
-        for (int wert : intArray) {
+        Set<Integer> intSet = new HashSet<>( ANZAHL_ZAHLEN );
+        for ( int wert : intArray ) {
             
             intSet.add(wert);
         }

@@ -27,7 +27,7 @@ public class LottoZahlenExceptionTest {
 
         assertThrows(LottoException.class, () -> {
             
-            new LottoZahlenGenerator(1, 1); // "1 aus 1"
+            new LottoZahlenGenerator( 1, 1 ); // "1 aus 1"
         });        
     }
 
@@ -37,12 +37,12 @@ public class LottoZahlenExceptionTest {
         
         final int anzahlZahlen = 0;
         
-        Throwable ex = assertThrows(LottoException.class, () -> {
+        Throwable ex = assertThrows( LottoException.class, () -> {
             
-            new LottoZahlenGenerator(anzahlZahlen, 49); // "0 aus 49"
+            new LottoZahlenGenerator( anzahlZahlen, 49); // "0 aus 49"
         });        
         
-        assertTrue( ex.getMessage().contains(anzahlZahlen + "") );
+        assertTrue( ex.getMessage().contains( anzahlZahlen + "") );
     }
     
     @Test
@@ -52,7 +52,7 @@ public class LottoZahlenExceptionTest {
         
         assertThrows(LottoException.class, () -> {
             
-            new LottoZahlenGenerator(zahl, zahl); // "20 aus 20"
+            new LottoZahlenGenerator( zahl, zahl ); // "20 aus 20"
         });         
     }
     
@@ -61,7 +61,7 @@ public class LottoZahlenExceptionTest {
 
         assertThrows(LottoException.class, () -> {
             
-            new LottoZahlenGenerator(12, 10); // "12 aus 10"
+            new LottoZahlenGenerator( 12, 10 ); // "12 aus 10"
         });         
     }
 
@@ -70,7 +70,7 @@ public class LottoZahlenExceptionTest {
 
         assertThrows(LottoException.class, () -> {
             
-            new LottoZahlenGenerator(12, -10); // "12 aus -10"
+            new LottoZahlenGenerator( 12, -10 ); // "12 aus -10"
         });         
     }
     
@@ -79,7 +79,7 @@ public class LottoZahlenExceptionTest {
 
         assertThrows(LottoException.class, () -> {
             
-            new LottoZahlenGenerator(-6, 49); // "-6 aus 49"
+            new LottoZahlenGenerator( -6, 49 ); // "-6 aus 49"
         });         
     }    
 }

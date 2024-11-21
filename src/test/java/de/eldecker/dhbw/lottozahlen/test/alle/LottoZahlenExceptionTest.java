@@ -81,5 +81,6 @@ public class LottoZahlenExceptionTest {
             
             new LottoZahlenGenerator( -6, 49 ); // "-6 aus 49"
         });         
-    }    
+    }
+
 }

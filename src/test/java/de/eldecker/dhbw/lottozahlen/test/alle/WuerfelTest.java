@@ -23,7 +23,7 @@ public class WuerfelTest {
 
     @ParameterizedTest
     @ValueSource(ints = { 1, 10, 20, 40, 80, 160 })
-    void wuerfeln(int seed) throws LottoException {
+    void wuerfeln( int seed ) throws LottoException {
 
         _cut = new LottoZahlenGenerator( 1, MAX_WUERFEL_AUGEN );
 

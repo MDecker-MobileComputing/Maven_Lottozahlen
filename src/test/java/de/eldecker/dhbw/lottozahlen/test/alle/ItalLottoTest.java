@@ -9,8 +9,9 @@ import org.junit.jupiter.api.Test;
 import de.eldecker.dhbw.lottozahlen.engine.LottoZahlenGenerator;
 import de.eldecker.dhbw.lottozahlen.engine.model.LottoException;
 
+
 /**
- * Test für italienisches Zahlenlotto "6 aus 90".
+ * Test für italienisches Zahlenlotto "6 aus 90" (SuperEnalotto).
  */
 public class ItalLottoTest {
 
@@ -30,7 +31,7 @@ public class ItalLottoTest {
     @BeforeEach
     void vorJederTestMethodeVorbereiten() throws LottoException {
          
-        _cut = new LottoZahlenGenerator(ANZAHL_ZAHLEN, MAX_ZAHL, 1234);
+        _cut = new LottoZahlenGenerator( ANZAHL_ZAHLEN, MAX_ZAHL, 1234 );
     }
     
     @Test
@@ -38,7 +39,7 @@ public class ItalLottoTest {
         
         int[] tippArray = _cut.erzeugeTipp(); // Aufruf Methode unter Test
         
-        assertEquals(ANZAHL_ZAHLEN, tippArray.length);
+        assertEquals( ANZAHL_ZAHLEN, tippArray.length );
     }
     
     /**

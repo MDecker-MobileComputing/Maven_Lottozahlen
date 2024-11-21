@@ -42,7 +42,7 @@ public class LottoZahlenExceptionTest {
             new LottoZahlenGenerator( anzahlZahlen, 49); // "0 aus 49"
         });        
         
-        assertTrue( ex.getMessage().contains( anzahlZahlen + "") );
+        assertTrue( ex.getMessage().contains( anzahlZahlen + "" ) );
     }
     
     @Test

@@ -61,7 +61,7 @@ public class LottoZahlenGenerator {
         _anzahlLottoZahlen = anzahlLottoZahlen;
         _maxLottoZahl      = maxLottoZahl;
 
-        _zufallsgenerator = new Random(initWertFuerZufall);
+        _zufallsgenerator = new Random( initWertFuerZufall );
     }
 
 

@@ -26,25 +26,25 @@ jobs:
         name: Lottozahlen_FatJar
         path: target/*jar-with-dependencies*.jar
 
-job-javadoc:
-  needs: job-fatjar
-  runs-on: ubuntu-latest
-  steps:
-    - name: Git-Repo auschecken
-      uses: actions/checkout@v4
-    - name: JDK 23 einrichten
-      uses: actions/setup-java@v4
-      with:
-        java-version: '23'
-        distribution: 'temurin'
-        cache: maven
-    - name: Maven-Installation checken
-      run: mvn --version
-    - name: JavaDoc erzeugen
-      run: mvn javadoc:javadoc -Dshow=private -DadditionalJOption=-Xdoclint:none
-    - name: JavaDoc veröffentlichen
-      uses: peaceiris/actions-gh-pages@v3 # https://github.com/marketplace/actions/github-pages-action
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/site/apidocs
-        publish_branch: javadoc-zweig
+  job-javadoc:
+    needs: job-fatjar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git-Repo auschecken
+        uses: actions/checkout@v4
+      - name: JDK 23 einrichten
+        uses: actions/setup-java@v4
+        with:
+          java-version: '23'
+          distribution: 'temurin'
+          cache: maven
+      - name: Maven-Installation checken
+        run: mvn --version
+      - name: JavaDoc erzeugen
+        run: mvn javadoc:javadoc -Dshow=private -DadditionalJOption=-Xdoclint:none
+      - name: JavaDoc veröffentlichen
+        uses: peaceiris/actions-gh-pages@v3 # https://github.com/marketplace/actions/github-pages-action
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/apidocs
+          publish_branch: javadoc-zweig

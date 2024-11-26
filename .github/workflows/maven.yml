@@ -3,6 +3,7 @@ name: FatJar+JavaDoc bauen
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
   job-fatjar:

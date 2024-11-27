@@ -28,7 +28,7 @@ jobs:
         path: target/*jar-with-dependencies*.jar
 
   job-javadoc:
-    needs: job-fatjar
+    #needs: job-fatjar
     runs-on: ubuntu-latest
     steps:
       - name: Git-Repo auschecken
@@ -49,3 +49,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/reports/apidocs
           publish_branch: javadoc-zweig
+
+

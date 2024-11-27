@@ -28,7 +28,7 @@ jobs:
         path: target/*jar-with-dependencies*.jar
 
   job-javadoc:
-    #needs: job-fatjar
+    needs: job-fatjar # wenn diese Zeile auskommentiert ist, dann laufen die beiden Jobs parallel
     runs-on: ubuntu-latest
     steps:
       - name: Git-Repo auschecken
@@ -44,10 +44,8 @@ jobs:
       - name: JavaDoc erzeugen
         run: mvn javadoc:javadoc -Dshow=private -DadditionalJOption=-Xdoclint:none
       - name: JavaDoc veröffentlichen
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4 # https://github.com/peaceiris/actions-gh-pages?tab=readme-ov-file#github-pages-action
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/reports/apidocs
           publish_branch: javadoc-zweig
-
-

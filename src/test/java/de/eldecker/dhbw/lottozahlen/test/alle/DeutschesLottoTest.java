@@ -38,6 +38,7 @@ public class DeutschesLottoTest {
         _cut = new LottoZahlenGenerator( ANZAHL_ZAHLEN, MAX_ZAHL, 1234 );
     }
     
+
     @Test
     @Tag("wichtig")
     void richtigeAnzahl() {
@@ -46,6 +47,7 @@ public class DeutschesLottoTest {
         
         assertEquals( ANZAHL_ZAHLEN, tippArray.length );
     }
+    
     
     /**
      * Mit einem {@code Set}-Objekt (math. Menge) wird überprüft, ob jede 
@@ -63,6 +65,7 @@ public class DeutschesLottoTest {
 
         assertEquals( ANZAHL_ZAHLEN, intSet.size() );
     }
+    
     
     @Test
     void aufsteigendeReihenfolge() {
@@ -83,6 +86,7 @@ public class DeutschesLottoTest {
         
         assertTrue( maxZahl <= MAX_ZAHL );
      }    
+    
     
     /**
      * Hilfsmethode (keine Unit-Test-Methode!), wandelt int-Array in {@code Set<Integer>}

@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Git-Repo auschecken
       uses: actions/checkout@v4
-    - name: JDK 23 einrichten
+    - name: JDK einrichten
       uses: actions/setup-java@v4
       with:
         java-version: '23'
@@ -28,7 +28,7 @@ jobs:
         path: target/*jar-with-dependencies*.jar
 
   job-javadoc:
-    needs: job-fatjar # wenn diese Zeile auskommentiert ist, dann laufen die beiden Jobs parallel
+#    needs: job-fatjar
     runs-on: ubuntu-latest
     steps:
       - name: Git-Repo auschecken
@@ -44,8 +44,9 @@ jobs:
       - name: JavaDoc erzeugen
         run: mvn javadoc:javadoc -Dshow=private -DadditionalJOption=-Xdoclint:none
       - name: JavaDoc veröffentlichen
-        uses: peaceiris/actions-gh-pages@v4 # https://github.com/peaceiris/actions-gh-pages?tab=readme-ov-file#github-pages-action
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/reports/apidocs
           publish_branch: javadoc-zweig
+

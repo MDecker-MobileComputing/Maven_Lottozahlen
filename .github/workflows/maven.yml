@@ -8,6 +8,8 @@ on:
     - cron: "55 10 * * 1-5"
 
 # Zeitangabe in Cron-String in UTC! (Deutsche Zeitzone: UTC+1 oder während Sommerzeit UTC+2 )
+# 1-5: von Montag bis Freitag
+# Komponenten im Cron-String: minute hour day-of-month month day-of-week
 #
 # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
 # "In a public repository, scheduled workflows are automatically disabled when no repository activity has occurred in 60 days."

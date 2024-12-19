@@ -4,8 +4,8 @@ on:
   push:
     branches: [ "master" ]
   workflow_dispatch:
-  schedule:
-    - cron: "55 10 * * 1-5"
+#  schedule:
+#    - cron: "55 10 * * 1-5"
 
 # Zeitangabe in Cron-String in UTC! (Deutsche Zeitzone: UTC+1 oder während Sommerzeit UTC+2 )
 # 1-5: von Montag bis Freitag

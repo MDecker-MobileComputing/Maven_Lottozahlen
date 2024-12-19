@@ -5,8 +5,9 @@ on:
     branches: [ "master" ]
   workflow_dispatch:
   schedule:
-    - cron: "45 11 * * 1-5"
+    - cron: "50 12 * * 1-5"
 
+# Zeitangabe in UTC (Deutsche Zeitzone: UTC+1 oder UTC+2 )
 # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
 # In a public repository, scheduled workflows are automatically disabled when no repository activity has occurred in 60 days.
 

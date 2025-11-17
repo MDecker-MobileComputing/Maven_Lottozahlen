@@ -25,6 +25,7 @@ public class DeutschesLottoTest {
     /** Class under Test. */
     private LottoZahlenGenerator _cut;
     
+    
     /**
      * Vor jeden Unit-Test-Methode wird ein neues Objekt der CUT
      * (mit frisch initialisiertem Testdatengenerator) erzeugt.
@@ -35,10 +36,14 @@ public class DeutschesLottoTest {
     @BeforeEach
     void vorJederTestMethodeVorbereiten() throws LottoException {
          
-        _cut = new LottoZahlenGenerator( ANZAHL_ZAHLEN, MAX_ZAHL, 1234 );
+        _cut = new LottoZahlenGenerator( ANZAHL_ZAHLEN, MAX_ZAHL, 1234 ); // 1234=randomSeed
     }
     
 
+    /**
+     * Überprüfen, ob ein Tipp die erforderliche Anzahl von Einträgen
+     * hat. 
+     */
     @Test
     @Tag("wichtig")
     void richtigeAnzahl() {
@@ -67,6 +72,9 @@ public class DeutschesLottoTest {
     }
     
     
+    /**
+     * Überprüfen, ob die Zahlen des Tipps korrekt aufsteigend sortiert sind. 
+     */
     @Test
     void aufsteigendeReihenfolge() {
 
@@ -92,7 +100,7 @@ public class DeutschesLottoTest {
      * Hilfsmethode (keine Unit-Test-Methode!), wandelt int-Array in {@code Set<Integer>}
      * um, wobei evtl. mehrfach vorhandene Zahlen verloren gehen.
      */
-    private Set<Integer> arrayToSet(int[] intArray) {
+    private Set<Integer> arrayToSet( int[] intArray ) {
         
         Set<Integer> intSet = new HashSet<>( ANZAHL_ZAHLEN );
         for ( int wert : intArray ) {

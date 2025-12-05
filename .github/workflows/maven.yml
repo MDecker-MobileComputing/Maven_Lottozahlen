@@ -18,6 +18,7 @@ on:
 jobs:
   job-fatjar:
     runs-on: ubuntu-latest
+    timeout-minutes: 10 # nach 10 Minuten Job abbrechen
     steps:
     - name: Git-Repo auschecken
       uses: actions/checkout@v4

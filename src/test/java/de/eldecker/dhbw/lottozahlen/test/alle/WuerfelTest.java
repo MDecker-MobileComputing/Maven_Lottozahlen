@@ -16,6 +16,7 @@ import org.junit.jupiter.params.provider.ValueSource;
  */
 public class WuerfelTest {
 
+	/** Anzahl Seiten des Würfels. */
     private static final int MAX_WUERFEL_AUGEN = 6;
 
     /** Class under Test. */

@@ -105,7 +105,7 @@ public class DeutschesLottoTest {
         Set<Integer> intSet = new HashSet<>( ANZAHL_ZAHLEN );
         for ( int wert : intArray ) {
             
-            intSet.add(wert);
+            intSet.add( wert );
         }
         
         return intSet;

@@ -40,7 +40,7 @@ public class LottoZahlenExceptionTest {
         
         Throwable ex = assertThrows( LottoException.class, () -> {
             
-            new LottoZahlenGenerator( anzahlZahlen, 49); // "0 aus 49"
+            new LottoZahlenGenerator( anzahlZahlen, 49 ); // "0 aus 49"
         });        
         
         assertTrue( ex.getMessage().contains( anzahlZahlen + "" ) );

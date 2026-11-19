@@ -96,7 +96,7 @@ public class LottoZahlenGenerator {
         for ( int i = 0; i < alleLottozahlenArray.length; i++ ) {
 
             double zufallszahl = _zufallsgenerator.nextDouble(); // erzeugt Zufallszahl im Bereich [0.0; 1.0)
-            alleLottozahlenArray[i] = new LottoZahlRecord( i+1, zufallszahl );
+            alleLottozahlenArray[ i ] = new LottoZahlRecord( i + 1, zufallszahl );
         }
 
         Comparator<LottoZahlRecord> comparator = Comparator.comparingDouble( LottoZahlRecord::zufallszahl );
@@ -105,10 +105,10 @@ public class LottoZahlenGenerator {
         int[] ergebnisArray = new int[ _anzahlLottoZahlen ];
         for (int i = 0; i < _anzahlLottoZahlen; i++) {
 
-            ergebnisArray[i] = alleLottozahlenArray[i].lottozahl();
+            ergebnisArray[ i ] = alleLottozahlenArray[ i ].lottozahl();
         }
 
-        Arrays.sort(ergebnisArray);
+        Arrays.sort( ergebnisArray );
 
         return ergebnisArray;
     }
@@ -135,5 +135,4 @@ public class LottoZahlenGenerator {
 
         return _anzahlLottoZahlen;
     }
-
 }
